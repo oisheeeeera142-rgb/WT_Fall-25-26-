@@ -72,7 +72,6 @@ else {
 $degree = $_POST["degree"];
 }
 if (empty($_POST["bloodgroup"])) {
-$bloodgrouperror = "must sleceted";
 } else {
 $bloodgorup = test_input($_POST["bloodgroup"]);
 }
