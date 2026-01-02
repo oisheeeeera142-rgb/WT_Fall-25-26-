@@ -13,6 +13,11 @@
 
         <label>Password:</label>
         <input type="password" id="password" name="password" required><br>
+            <select name="role" required>
+                <option value="">--role--</option>
+                <option value="Guest">Guest</option>
+                <option value="Admin">Admin</option>
+                </select><br>
 
         <button type="submit">Login</button>
     </form>
