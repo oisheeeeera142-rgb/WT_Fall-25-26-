@@ -35,16 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $role = test_input($_POST["role"]);
     }
-
-
-    if (empty($nameError) && empty($emailError) && empty($passwordError) && empty($roleError)) {
-        header("Location: ../view/loginh.php");
-exit();
+    header("Location: ../View/loginh.php"); 
+    } else { 
 
         exit();
-    }
-}
 
+    }
 
 function test_input($data) {
     return trim($data);

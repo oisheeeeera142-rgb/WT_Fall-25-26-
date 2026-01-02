@@ -1,20 +1,27 @@
 <?php
 session_start();
 
-
-if (!isset($_SESSION['loggedin'])) {
-    header("Location: login.php");
+// Check if user is logged in
+if (!isset($_SESSION['loggedin']) || empty($_SESSION['role'])) {
+    // Not logged in → redirect to login page
+    header("Location: loginh.php");
     exit();
 }
 
-if ($_SESSION['role'] === "admin") {
-    header("Location: admindashboard.php");
-    exit();
-} elseif ($_SESSION['role'] === "guest") {
-    header("Location: guestdashboard.php");
-    exit();
-} else {
-    header("Location: login.php");
-    exit();
+// Redirect based on role
+switch ($_SESSION['role']) {
+    case "Admin":
+        // Admin dashboard
+        header("Location: admindashboardh.php");
+        exit();
+    case "Guest":
+        // Guest dashboard
+        header("Location: guestdashboard.php");
+        exit();
+    default:
+        // Unknown role → logout or back to login
+        session_destroy();
+        header("Location: loginh.php");
+        exit();
 }
 ?>
