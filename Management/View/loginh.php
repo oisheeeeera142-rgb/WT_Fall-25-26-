@@ -7,17 +7,19 @@
 </head>
 <body>
     <h2>Login</h2>
-    <form action="login.php" method="post" onsubmit="return validateLogin()">
+    <form action="../Controller/login.php" method="post" onsubmit="return validateLogin()">
         <label>Email:</label>
         <input type="email" id="email" name="email" required><br>
 
         <label>Password:</label>
         <input type="password" id="password" name="password" required><br>
-            <select name="role" required>
-                <option value="">--role--</option>
-                <option value="Guest">Guest</option>
-                <option value="Admin">Admin</option>
-                </select><br>
+
+        <label>Role:</label>
+        <select name="role" required>
+            <option value="">--Select Role--</option>
+            <option value="Guest">Guest</option>
+            <option value="Admin">Admin</option>
+        </select><br>
 
         <button type="submit">Login</button>
     </form>
