@@ -7,12 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $role = trim($_POST["role"]);
 
     if (!empty($email) && !empty($password) && !empty($role)) {
-        // Session set
         $_SESSION['loggedin'] = true;
         $_SESSION['email'] = $email;
         $_SESSION['role'] = $role;
-
-        // Redirect based on role
         if ($role === "Admin") {
             header("Location: ../View/admindashboardh.php");
         } else {
@@ -23,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p style='color:red;'>Email, Password and Role are required</p>";
     }
 } else {
-    // Direct access without POST
     header("Location: ../View/loginh.php");
     exit();
 }
