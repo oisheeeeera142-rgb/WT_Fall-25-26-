@@ -1,6 +1,9 @@
 
 <?php
 session_start();
+ini_set('session.gc_maxlifetime', 1728000); 
+session_set_cookie_params(1728000); 
+session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'Admin') {
     header("Location: loginh.php");
