@@ -1,5 +1,4 @@
 <?php
-
 $roomNumber = "";
 $floor = "";
 $view = "";
