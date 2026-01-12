@@ -1,16 +1,39 @@
-.roomlist {
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.rooms {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-top: 20px;
 }
 
 .room-box {
-    border: 1px solid #ddd;
+    background-color: #ffffff;
     padding: 15px;
-    background-color: #fafafa;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.room-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .room-box p {
@@ -20,65 +43,109 @@
 
 .button {
     margin-top: 12px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
 }
 
-.button {
-    width: auto;
-    padding: 6px 12px;
-    margin: 4px;
+.editBtn,
+.deleteBtn {
+    width: 48%;
+    padding: 7px 0;
     border: none;
+    border-radius: 5px;
+    font-size: 13px;
     cursor: pointer;
 }
 
 .editBtn {
-    background-color: #0c3b21;
-    color: #fff;
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.editBtn:hover {
+    background-color: #218838;
 }
 
 .deleteBtn {
-    background-color: #f44336;
-    color: #fff;
+    background-color: #dc3545;
+    color: #ffffff;
 }
 
-
-#addRoom {
-    margin-top: 30px;
-    width: 320px;
-    border: 1px solid #ccc;
-    padding: 15px;
-    background-color: #fff;
+.deleteBtn:hover {
+    background-color: #c82333;
 }
 
-#addRoomlabel {
-    display: block;
-    margin-top: 10px;
+#addRoomForm {
+    max-width: 400px;
+    margin: 30px auto 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#addRoom input,
-#addRoom select {
+#addRoomForm h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#addRoomForm input,
+#addRoomForm select {
     width: 100%;
-    padding: 6px;
-    margin-top: 5px;
-}
-
-#addRoombutton {
-    margin-top: 12px;
-    padding: 8px 12px;
-}
-
-#switchmotion {
-    background-color: #2196F3;
-
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 15px;
+    padding: 9px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 14px;
 }
 
+#addRoomForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#addRoomForm button:hover {
+    background-color: #0056b3;
+}
+
+#switchmotion {
+    display: block;
+    margin: 25px auto 0;
+    padding: 12px 22px;
+    background-color: #0069d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 #switchmotion:hover {
-    background-color: #1e88e5;
+    background-color: #0053b3;
+    transform: translateY(-2px);
+}
+
+#switchmotion:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 992px) {
+    .rooms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .rooms {
+        grid-template-columns: 1fr;
+    }
 }
