@@ -1,7 +1,4 @@
 
-<?php
-session_start(); 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -20,9 +17,9 @@ session_start();
 
     <label>Role:</label>
     <select name="role" required>
-    <option value="">--Select Role--</option>
-    <option value="Guest">Guest</option>
-    <option value="Admin">Admin</option>
+        <option value="">--Select Role--</option>
+        <option value="Guest">Guest</option>
+        <option value="Admin">Admin</option>
     </select><br>
 
     <button type="submit">Login</button>
