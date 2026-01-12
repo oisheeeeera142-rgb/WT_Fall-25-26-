@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.room-box {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.room-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.room-box p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.button {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editBtn,
+.deleteBtn {
+    width: 48%;
+    padding: 7px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.editBtn {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.editBtn:hover {
+    background-color: #218838;
+}
+
+.deleteBtn {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.deleteBtn:hover {
+    background-color: #c82333;
+}
+
+#addRoomForm {
+    max-width: 400px;
+    margin: 30px auto 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#addRoomForm h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#addRoomForm input,
+#addRoomForm select {
+    width: 100%;
+    padding: 9px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#addRoomForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#addRoomForm button:hover {
+    background-color: #0056b3;
+}
+
+#switchmotion {
+    display: block;
+    margin: 25px auto 0;
+    padding: 12px 22px;
+    background-color: #0069d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#switchmotion:hover {
+    background-color: #0053b3;
+    transform: translateY(-2px);
+}
+
+#switchmotion:active {
+    transform: scale(0.97);
+}
+
+@media (max-width: 992px) {
+    .rooms {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .rooms {
+        grid-template-columns: 1fr;
+    }
+}
